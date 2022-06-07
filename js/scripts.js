@@ -1,7 +1,7 @@
 // Business Logic
 
 function wordCounter(text) {
-  if (text.trim().length === 0) {
+  if ((text.trim().length === 0) || (word.trim().length === 0)) {
     return 0;
   }
   let wordCount = 0;
@@ -29,10 +29,10 @@ function numberOfOccurrencesInText(word, text) {
 }
 
 // UI Logic
-$(document).ready(function() {
-  $("form#word-counter").submt(function(event) {
+$(document).ready(function(){
+  $("form#word-counter").submit(function(event){
     event.preventDefault();
-    const passage = $("#test-passage").val();
+    const passage = $("#text-passage").val();
     const word = $("#word").val();
     const wordCount = wordCounter(passage);
     const occurrencesOfWord = numberOfOccurrencesInText(word, passage);
