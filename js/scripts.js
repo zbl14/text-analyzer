@@ -28,6 +28,17 @@ function numberOfOccurrencesInText(word, text) {
   return wordCount;
 }
 
+function ommitOffensiveWords(text) {
+  const offensiveWords = ["zoinks", "muppeteer", "biffaroni", "loopdaloop"];
+  if (offensiveWords.includes(text)) {
+  	return ""
+	} else 
+    return text
+}
+
+
+
+
 // UI Logic
 $(document).ready(function(){
   $("form#word-counter").submit(function(event){

@@ -82,12 +82,18 @@ Describe: ommitOffensiveWords()
 ```
 Test: "It should return an empty string when a single "zoinks" is passed in."
 Code:
-const word = "zoinks";
 const text = "zoinks";
+ommitOffensiveWords(word, text);
 Epected Output: ""
 
 Test: "It should return a string without "zoinks" when a single word is passed in."
 Code:
-const word = "zoinks";
 const text = "hello";
+ommitOffensiveWords(word, text);
+Epected Output: "hello"
+
+Test: "It should return a string without "zoinks", "muppeteer", "biffaroni", and "loopdaloop" when a single word is passed in."
+Code:
+const text = "hello";
+ommitOffensiveWords(word, text);
 Epected Output: "hello"
