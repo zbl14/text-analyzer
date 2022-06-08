@@ -85,3 +85,9 @@ Code:
 const word = "zoinks";
 const text = "zoinks";
 Epected Output: ""
+
+Test: "It should return a string without "zoinks" when a single word is passed in."
+Code:
+const word = "zoinks";
+const text = "hello";
+Epected Output: "hello"
