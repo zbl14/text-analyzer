@@ -30,7 +30,7 @@ function numberOfOccurrencesInText(word, text) {
 
 function ommitOffensiveWords(text) {
   const offensiveWords = ["zoinks", "muppeteer", "biffaroni", "loopdaloop"];
-  if (offensiveWords.includes(text)) {
+  if (offensiveWords.includes(text.toLowerCase())) {
   	return ""
 	} else 
     return text

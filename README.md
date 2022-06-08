@@ -97,3 +97,9 @@ Code:
 const text = "hello";
 ommitOffensiveWords(word, text);
 Epected Output: "hello"
+
+Test: "It should return a empty string if a single word that is "zoinks", "muppeteer", "biffaroni", or "loopdaloop" passed in regardless of case."
+Code:
+const text = "ZoinKs";
+ommitOffensiveWords(word, text);
+Epected Output: ""
