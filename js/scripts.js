@@ -45,6 +45,10 @@ function ommitOffensiveWords(text) {
   return goodWords.join(" ");
 }
 
+function boldPassage(word, text) {
+  return "<p>" + text + "</p>";
+}
+
 
 // UI Logic
 $(document).ready(function(){

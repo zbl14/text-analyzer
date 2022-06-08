@@ -109,3 +109,15 @@ Code:
 const text = "Hello Zoinks, I like muppeteer? Do you like biffaroni and loopdaloop?";
 ommitOffensiveWords(text);
 Expected Output: "Hello I like Do you like and";
+
+```sh
+Describe: boldPassage()
+```
+
+Test: "It should return a non-matching word in a p tag."
+Code:
+const word = "hello";
+const text = "yo";
+boldPassage(word, text);
+Expected Output: "<p>yo</p>"
+
