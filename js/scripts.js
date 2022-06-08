@@ -30,13 +30,20 @@ function numberOfOccurrencesInText(word, text) {
 
 function ommitOffensiveWords(text) {
   const offensiveWords = ["zoinks", "muppeteer", "biffaroni", "loopdaloop"];
-  if (offensiveWords.includes(text.toLowerCase())) {
-  	return ""
-	} else 
-    return text
+  let goodWords = [];
+  const textArray = text.split(" ");
+  textArray.forEach(function(element) {
+    offensiveWords.forEach(function(offensiveWord) {    
+      if (element.toLowerCase().includes(offensiveWord)){
+        // goodWords.push("");
+        console.log(true)
+      }
+        // goodWords.push(element);
+        console.log(false)
+    });
+  });
+  return goodWords.join(" ");
 }
-
-
 
 
 // UI Logic

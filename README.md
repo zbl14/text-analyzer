@@ -83,23 +83,29 @@ Describe: ommitOffensiveWords()
 Test: "It should return an empty string when a single "zoinks" is passed in."
 Code:
 const text = "zoinks";
-ommitOffensiveWords(word, text);
+ommitOffensiveWords(text);
 Epected Output: ""
 
 Test: "It should return a string without "zoinks" when a single word is passed in."
 Code:
 const text = "hello";
-ommitOffensiveWords(word, text);
+ommitOffensiveWords(text);
 Epected Output: "hello"
 
 Test: "It should return a string without "zoinks", "muppeteer", "biffaroni", and "loopdaloop" when a single word is passed in."
 Code:
 const text = "hello";
-ommitOffensiveWords(word, text);
+ommitOffensiveWords(text);
 Epected Output: "hello"
 
 Test: "It should return a empty string if a single word that is "zoinks", "muppeteer", "biffaroni", or "loopdaloop" passed in regardless of case."
 Code:
 const text = "ZoinKs";
-ommitOffensiveWords(word, text);
+ommitOffensiveWords(text);
 Epected Output: ""
+
+Test: "It should return a string without a "zoinks", "muppeteer", "biffaroni", and "loopdaloop" when a sentence is passed in regardless of case."
+Code:
+const text = "Hello Zoinks, I like muppeteer? Do you like biffaroni and loopdaloop?";
+ommitOffensiveWords(text);
+Expected Output: "Hello I like Do you like and";
