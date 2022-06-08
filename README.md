@@ -1,5 +1,6 @@
+```sh
 Describe: wordCounter()
-
+```
 Test: "It should return 1 if a passage has just one word."
 Code:
 const text = "hello";
@@ -24,8 +25,9 @@ Test: "It should not count numbers as words."
 Code: wordCounter("hi there 77 19");
 Expected Output: 2
 
+```sh
 Describe: numberOfOccurrencesInText()
-
+```
 Test: "It should return 0 occurrences of a word for an empty string."
 Code:
 const text = "";
@@ -74,3 +76,12 @@ const word = "";
 const text = "red RED Red!";
 wordCounter(word, text);
 Expected Output: 0
+
+```sh
+Describe: ommitOffensiveWords()
+```
+Test: "It should return an empty string when a single "zoinks" is passed in."
+Code:
+const word = "zoinks";
+const text = "zoinks";
+Epected Output: ""
