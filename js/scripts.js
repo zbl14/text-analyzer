@@ -46,6 +46,9 @@ function ommitOffensiveWords(text) {
 }
 
 function boldPassage(word, text) {
+  if (word === text) {
+    return "<p><b>" + text + "</b></p>";
+  } else
   return "<p>" + text + "</p>";
 }
 
