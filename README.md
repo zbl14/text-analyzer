@@ -134,3 +134,15 @@ const word = "hello";
 const text = "hello there";
 boldPassage(word, text);
 Expected Output: "<p><b>hello</b> there</p>"
+
+Test: "It should wrap words that match in `b` tags but not words that don't regarless of case"
+Code:
+const word = "hello";
+const text = "hello there";
+boldPassage(word, text);
+Expected Output: "<p><b>hello</b> there</p>"
+
+```sh
+Describe: mostCommonWord()
+```
+Test："It should return 1 

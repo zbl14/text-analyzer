@@ -35,18 +35,20 @@ function numberOfOccurrencesInText(word, text) {
 }
 
 function ommitOffensiveWords(text) {
-  const offensiveWords = ["zoinks", "muppeteer", "biffaroni", "loopdaloop"];
+  // const offensiveWords = ["zoinks", "muppeteer", "biffaroni", "loopdaloop"];
   let goodWords = [];
-  const textArray = text.split(" ");
+  let textArray = text.split(" ");
+  console.log(textArray);
   textArray.forEach(function(element) {
-    offensiveWords.forEach(function(offensiveWord) {    
-      if (element.toLowerCase().includes(offensiveWord)){
-        // goodWords.push("");
-        console.log(true)
+    // offensiveWords.forEach(function(offensiveWord) {    
+      if ((element.toLowerCase()) === ("zoinks" || "muppeteer" || "biffaroni" || "loopdaloop" ) ){
+        goodWords.push("");
+        // console.log(true)
+      } else {
+        // console.log(false)
+        goodWords.push(element);
       }
-        // goodWords.push(element);
-        console.log(false)
-    });
+    // });
   });
   return goodWords.join(" ");
 }
@@ -60,7 +62,7 @@ function boldPassage(word, text) {
   let htmlString = "<p>";
   let textArray = text.split(" ");
   textArray.forEach(function(element, index) {
-    if (word === element) {
+    if (word.toLowerCase() === element.toLowerCase()) {
       htmlString = htmlString.concat("<b>" + element + "</b>");
     } else {
       htmlString = htmlString.concat(element);
