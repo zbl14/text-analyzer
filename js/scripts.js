@@ -1,13 +1,18 @@
 // Utility Logic
 
-function noInputtedWord(word, text) {
-  return ((text.trim().length === 0) || (word.trim().length === 0));
+function noInputtedWord() {
+  for (let i=0; i < arguments.length; i++) {
+    if (arguments[i].trim().length === 0) {
+      return true;
+    }
+  }
+  return false;
 }
 
 // Business Logic
 
 function wordCounter(text) {
-  if (text.trim().length === 0) {
+  if (noInputtedWord(text)) {
     return 0;
   }
   let wordCount = 0;
@@ -35,45 +40,15 @@ function numberOfOccurrencesInText(word, text) {
 }
 
 function ommitOffensiveWords(text) {
-  const offensiveWords = ["zoinks", "muppeteer", "biffaroni", "loopdaloop"];
   let goodWords = [];
-  let textArray = text.split(" ");
-  console.log(textArray);
+  let textArray = text.toLowerCase().split(" ");
   textArray.forEach(function(element) {
-    // offensiveWords.forEach(function(offensiveWord) {    
-      for (let i=0; i<offensiveWords.length; i++){
-        if (element[j].includes(offensiveWords[i])){
-          console.log(true);
-          console.log(goodWords);
-          goodWords.push("");
-        } else {
-          console.log(false)
-          console.log(goodWords);
-          goodWords.push(element);
-        }
-      }
-
-    });
-  // });
+    if(!element.includes("zoinks") && !element.includes("muppeteer") && !element.includes("biffaroni") && !element.includes("loopdaloop")){
+      goodWords.push(element);
+    } 
+  });
   return goodWords.join(" ");
 }
-
-ommitOffensiveWords("hello zoinks");
-
-function languageFilter(text) {
-  const wordArray = text.split(" ");
-  words.forEach(function (word) {
-    wordArray.forEach(function (element) {
-      if (element.toLowerCase().includes(word.toLowerCase())) {
-      wordArray.splice(wordArray.indexOf(element), 1);
-      }
-    });
-  });
-  return wordArray.join(" ");
-}
-const text = "Zoinks, muppeteer I love biffaroni, loopdaloop";
-const words = ["zoinks", "muppeteer", "biffaroni", "loopdaloop"];
-languageFilter(text);
 
 // UI Logic
 function boldPassage(word, text) {
