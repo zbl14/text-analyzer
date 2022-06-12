@@ -51,24 +51,47 @@ function ommitOffensiveWords(text) {
 }
 
 // UI Logic
+//bold pen but not pen in happen
+// function boldPassage(word, text) {
+//   if (noInputtedWord(word, text)) {
+//     return "";
+//   }
+//   const regexWord = new RegExp("\\b" + word + "\\b", "gi");
+//   const boldedWord = "<b>" + word + "</b>";
+//   const htmlString = text.replace(regexWord, boldedWord);
+//   return "<p>" + htmlString + "</p>";
+// }
+
+
+//bold pen in happen
 function boldPassage(word, text) {
   if (noInputtedWord(word, text)) {
     return "";
   }
-  let htmlString = "<p>";
-  let textArray = text.split(" ");
-  textArray.forEach(function(element, index) {
-    if (word.toLowerCase() === element.toLowerCase()) {
-      htmlString = htmlString.concat("<b>" + element + "</b>");
-    } else {
-      htmlString = htmlString.concat(element);
-    }
-    if (index !== (textArray.length - 1)) {
-      htmlString = htmlString.concat(" ");
-    }
-  });
-  return htmlString + "</p>";
+  const regexWord = new RegExp(word, "gi");
+  const boldedWord = "<b>" + word + "</b>";
+  const htmlString = text.replace(regexWord, boldedWord);
+  return "<p>" + htmlString + "</p>";
 }
+
+// function boldPassage(word, text) {
+//   if (noInputtedWord(word, text)) {
+//     return "";
+//   }
+//   let htmlString = "<p>";
+//   let textArray = text.split(" ");
+//   textArray.forEach(function(element, index) {
+//     if (word.toLowerCase() === element.toLowerCase()) {
+//       htmlString = htmlString.concat("<b>" + element + "</b>");
+//     } else {
+//       htmlString = htmlString.concat(element);
+//     }
+//     if (index !== (textArray.length - 1)) {
+//       htmlString = htmlString.concat(" ");
+//     }
+//   });
+//   return htmlString + "</p>";
+// }
 
 $(document).ready(function(){
   $("form#word-counter").submit(function(event){
